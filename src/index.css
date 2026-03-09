@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: Georgia, serif;
+  --font-sans: system-ui, sans-serif;
+  --font-body: Arial, sans-serif;
+
+  --color-brown: #241a14;
+  --color-muted: #868686;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

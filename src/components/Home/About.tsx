@@ -1,8 +1,9 @@
+import { serifStyle, sansStyle } from "../../styles/fonts";
+
 export default function About() {
   return (
     <div id="about" className="py-30 px-12 flex flex-col items-center">
       <div className="w-4/5 flex flex-row justify-between items-center">
-        {/* Profile image */}
         <div className="shrink-0">
           <div
             className="w-85 h-140 overflow-hidden rotate-18"
@@ -17,27 +18,21 @@ export default function About() {
         </div>
 
         <div className="flex flex-col w-170 pt-10">
-          <p className="text-xl" style={{ fontFamily: "Arial, sans-serif" }}>
+          <p className="text-xl" style={sansStyle}>
             My passion lies in building products at the intersection of design
             and development. With experience across fast-moving start-ups and
-            large cross-functional teams, I’ve collaborated closely with
+            large cross-functional teams, I've collaborated closely with
             designers, engineers, and product leaders to bring concepts from
             early sketches all the way to production (and beyond).
           </p>
-          <p
-            className="pt-4 text-xl"
-            style={{ fontFamily: "Arial, sans-serif" }}
-          >
-            I’m driven by curiosity, craftsmanship and a love for creating
-            things that people actually use — whether I’m designing a new
-            feature, painting on a canvas, cooking a new dish, or shaping clay
-            into what will probably become another coffee mug.
+          <p className="pt-4 text-xl" style={sansStyle}>
+            I'm driven by curiosity, craftsmanship and a love for creating
+            things that people actually use — whether I'm designing a new
+            feature, painting on a canvas, or shaping clay into what will
+            probably become another coffee mug.
           </p>
           <div className="w-full text-end pt-4">
-            <h2
-              className="text-xl font-bold"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
+            <h2 className="text-2xl font-bold" style={serifStyle}>
               Johanna Martinsson
             </h2>
           </div>

@@ -1,9 +1,10 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
 
 @theme {
-  --font-display: Georgia, serif;
+  --font-display: Bodoni Moda, serif;
   --font-sans: system-ui, sans-serif;
-  --font-body: Arial, sans-serif;
+  --font-body: DM Sans, sans-serif;
 
   --color-brown: #241a14;
   --color-muted: #868686;

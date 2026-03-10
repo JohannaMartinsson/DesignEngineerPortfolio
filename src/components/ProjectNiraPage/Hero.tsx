@@ -1,7 +1,9 @@
+import { serifStyle, sansStyle } from "../../styles/fonts";
+
 export default function NiraHero() {
   return (
     <div
-      id="niraheader"
+      id="nirahero"
       className="w-full flex flex-col justify-center items-center gap-18"
     >
       <div
@@ -9,12 +11,26 @@ export default function NiraHero() {
         style={{ backgroundColor: "#241a14" }}
       >
         <div className="w-4/5 flex justify-between items-center">
-          <h1
-            className="text-7xl w-200 text-white"
-            style={{ fontFamily: "Georgia, serif" }}
-          >
-            Ensuring driver safety when interacting with in-car touch screens
-          </h1>
+          <div className="flex flex-col gap-1">
+            <p className="text-xl w-full text-white" style={sansStyle}>
+              Ensuring
+            </p>
+            <p
+              className="text-5xl w-180 text-white uppercase"
+              style={serifStyle}
+            >
+              driver safety
+            </p>
+            <p className="text-xl w-full text-white" style={sansStyle}>
+              when interacting with
+            </p>
+            <p
+              className="text-5xl w-180 text-white uppercase"
+              style={serifStyle}
+            >
+              HMI touch screens
+            </p>
+          </div>
 
           <div className="relative z-10 mt-60 w-110 aspect-7/8 overflow-hidden rounded-t-full border-5 border-white shrink-0">
             <img
@@ -32,7 +48,7 @@ export default function NiraHero() {
               className="w-full h-full "
             />
           </div>
-          <p className="text-xl" style={{ fontFamily: "Arial, sans-serif" }}>
+          <p className="text-xl" style={sansStyle}>
             NIRA Dynamics develops innovative software solutions for automotive
             systems. The company aims to improve and modernize current
             technologies to fulfill today's standards for vehicle safety and
@@ -40,13 +56,10 @@ export default function NiraHero() {
           </p>
         </div>
         <div className="flex flex-col gap-5">
-          <h1
-            className="text-4xl uppercase"
-            style={{ fontFamily: "Georgia, serif" }}
-          >
+          <h1 className="text-5xl uppercase" style={serifStyle}>
             The background
           </h1>
-          <p className="text-xl" style={{ fontFamily: "Arial, sans-serif" }}>
+          <p className="text-xl" style={sansStyle}>
             To increase the safety for their test drivers, NIRA was in need of
             investigating how their internal data acquisition tool could be
             improved and re-designed. This system was developed without

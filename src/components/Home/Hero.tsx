@@ -1,3 +1,5 @@
+import { serifStyle, sansStyle } from "../../styles/fonts";
+
 export default function Hero() {
   return (
     <div
@@ -7,37 +9,25 @@ export default function Hero() {
     >
       <div className="w-4/5 min-h-100 flex justify-between gap-5 pt-10">
         <div className="flex flex-col gap-16">
-          <h1
-            className="text-4xl text-white"
-            style={{ fontFamily: "Georgia, serif" }}
-          >
+          <h1 className="text-4xl text-white uppercase" style={serifStyle}>
             Hi, I'm Johanna
           </h1>
           <div className="flex flex-col gap-2">
-            <p
-              className="text-2xl w-full text-white"
-              style={{ fontFamily: "Arial, sans-serif" }}
-            >
+            <p className="text-2xl w-full text-white" style={sansStyle}>
               You'll find me where
             </p>
             <div className="flex gap-6 items-end">
               <h1
-                className="uppercase text-6xl text-white min-w-fit"
-                style={{ fontFamily: "Georgia, serif" }}
+                className="uppercase text-7xl text-white min-w-fit"
+                style={serifStyle}
               >
                 creative design
               </h1>
-              <p
-                className="text-2xl w-full text-white"
-                style={{ fontFamily: "Arial, sans-serif" }}
-              >
+              <p className="text-2xl w-full text-white" style={sansStyle}>
                 meets
               </p>
             </div>
-            <h1
-              className="uppercase text-6xl text-white"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
+            <h1 className="uppercase text-7xl text-white" style={serifStyle}>
               technical expertise
             </h1>
           </div>
@@ -51,10 +41,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="w-4/5">
-        <p
-          className="text-2xl w-full text-end text-white"
-          style={{ fontFamily: "Arial, sans-serif" }}
-        >
+        <p className="text-2xl w-full text-end text-white" style={sansStyle}>
           …or in a pottery studio, working on yet another coffee mug.
         </p>
       </div>

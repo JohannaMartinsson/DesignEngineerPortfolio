@@ -1,11 +1,18 @@
+import CTA from "../components/CTA";
 import Nav from "../components/Nav";
+import HubexoHero from "../components/ProjectHubexoPage/Hero";
+import HubexoOutcome from "../components/ProjectHubexoPage/Outcome";
+import HubexoTheProcess from "../components/ProjectHubexoPage/TheProcess";
 
 export default function ProjectHubexoPage() {
   return (
     <>
       <Nav />
-      <main className="pt-20 min-h-screen flex items-center justify-center">
-        <p className="text-[var(--color-muted)] font-sans text-sm">Project Hubexo — coming soon</p>
+      <main className="flex flex-col gap-20">
+        <HubexoHero />
+        <HubexoTheProcess />
+        <HubexoOutcome />
+        <CTA />
       </main>
     </>
   );

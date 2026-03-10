@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { serifStyle, sansStyle } from "../../styles/fonts";
 
 const projects = [
   {
@@ -27,8 +28,8 @@ export default function SelectionOfWork() {
     <div id="work" className="w-full flex flex-col items-center">
       <div className="w-4/5 flex flex-col mb-20 gap-12">
         <h2
-          className="text-4xl uppercase"
-          style={{ fontFamily: "Georgia, serif" }}
+          className="text-5xl uppercase"
+          style={serifStyle}
         >
           Selection of work
         </h2>
@@ -54,7 +55,7 @@ export default function SelectionOfWork() {
                     <div>
                       <h3
                         className="text-4xl"
-                        style={{ fontFamily: "Georgia, serif" }}
+                        style={serifStyle}
                       >
                         {project.title}
                       </h3>
@@ -63,7 +64,7 @@ export default function SelectionOfWork() {
                     <div>
                       <p
                         className="text-xl"
-                        style={{ fontFamily: "Arial, sans-serif" }}
+                        style={sansStyle}
                       >
                         {project.description}
                       </p>
@@ -71,7 +72,7 @@ export default function SelectionOfWork() {
                   </div>
                   <span
                     className="text-md font-medium no-underline hover:underline transition-colors"
-                    style={{ fontFamily: "Arial, sans-serif" }}
+                    style={sansStyle}
                   >
                     See full project →
                   </span>

@@ -1,11 +1,18 @@
+import CTA from "../components/CTA";
 import Nav from "../components/Nav";
+import NiraHero from "../components/ProjectNiraPage/Hero";
+import NiraOutcome from "../components/ProjectNiraPage/Outcome";
+import NiraTheProcess from "../components/ProjectNiraPage/TheProcess";
 
 export default function ProjectNiraPage() {
   return (
     <>
       <Nav />
-      <main className="pt-20 min-h-screen flex items-center justify-center">
-        <p className="text-[var(--color-muted)] font-sans text-sm">Project NIRA — coming soon</p>
+      <main className="flex flex-col gap-20">
+        <NiraHero />
+        <NiraTheProcess />
+        <NiraOutcome />
+        <CTA />
       </main>
     </>
   );

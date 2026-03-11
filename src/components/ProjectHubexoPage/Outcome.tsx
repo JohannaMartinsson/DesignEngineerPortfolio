@@ -16,6 +16,14 @@ export default function HubexoOutcome() {
             their projects, as well as for subcontractors aiming to secure new
             work opportunities.
           </p>
+          <p className="text-xl" style={sansStyle}>
+            The mapping of platform user flows enhanced clarity for developers,
+            making it easier to understand flows and user types while also
+            providing material for discussing design and implementation details
+            in a better way. By bridging the gap between design and frontend,
+            I improved the collaboration in the team and my work provided a
+            thorough basis for future development.
+          </p>
         </div>
 
         <div className="pt-16 pb-14 flex justify-between gap-20">
@@ -24,17 +32,23 @@ export default function HubexoOutcome() {
               Business value
             </h3>
             <ul
-              className="text-xl flex flex-col gap-1 list-disc pl-6"
+              className="text-xl flex flex-col gap-3 list-disc pl-6"
               style={sansStyle}
             >
               <li>
-                Supports expansion into new markets by increasing
-                competitiveness
+                Enhanced Hubexo’s competitive positioning through a modern,
+                user-centric interface that distinguishes their solution from
+                legacy platforms
               </li>
-              <li>Increases adoption rates through improved functionalities</li>
               <li>
-                Strengthens Hubexo’s brand identity with a modern design that
-                boosts efficiency
+                Improved developer clarity and team collaboration through clear
+                user flow mapping and bridging design-development gaps, leading
+                to faster, higher-quality execution
+              </li>
+              <li>
+                Established a strong foundation for future platform
+                enhancements, making it easier to address diverse regional
+                requirements and support ongoing company growth.
               </li>
             </ul>
           </div>
@@ -43,17 +57,23 @@ export default function HubexoOutcome() {
               User value
             </h3>
             <ul
-              className="text-xl flex flex-col gap-1 list-disc pl-6"
+              className="text-xl flex flex-col gap-3 list-disc pl-6"
               style={sansStyle}
             >
               <li>
-                User testing highlights the platform’s intuitive and easy-to-use
-                workflows
+                Delivered a more cohesive and intuitive tendering experience,
+                addressing fragmentation and usability pain points that existing
+                solutions failed to resolve.
               </li>
-              <li>Combines multiple tools into one streamlined platform</li>
               <li>
-                Provides clear overviews and notifications to keep users
-                informed
+                Significantly improved user efficiency by providing clear,
+                responsive layouts and streamlined user flows for different
+                roles within the building sector.
+              </li>
+              <li>
+                Responded directly to user needs by quickly implementing UI
+                improvements based on feedback throughout the design and
+                development process.
               </li>
             </ul>
           </div>

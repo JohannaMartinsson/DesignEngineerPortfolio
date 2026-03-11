@@ -1,0 +1,58 @@
+import type { ReactNode } from "react";
+import { serifStyle, sansStyle } from "../../styles/fonts";
+
+interface ProjectHeroProps {
+  id: string;
+  title: ReactNode;
+  image: string;
+  logo: string;
+  description: string;
+  backgroundText: string;
+}
+
+export default function ProjectHero({
+  id,
+  title,
+  image,
+  logo,
+  description,
+  backgroundText,
+}: ProjectHeroProps) {
+  return (
+    <div
+      id={id}
+      className="w-full flex flex-col justify-center items-center gap-18"
+    >
+      <div
+        className="w-full h-130 flex items-center justify-center overflow-visible"
+        style={{ backgroundColor: "#241a14" }}
+      >
+        <div className="w-4/5 flex justify-between items-center">
+          <div className="flex flex-col gap-1">{title}</div>
+
+          <div className="relative z-10 mt-60 w-110 aspect-7/8 overflow-hidden rounded-t-full border-5 border-white shrink-0">
+            <img src={image} className="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+      <div className="w-4/5 flex flex-col gap-24">
+        <div className="flex flex-col gap-8">
+          <div className="w-40">
+            <img src={logo} className="w-full h-full" />
+          </div>
+          <p className="text-xl" style={sansStyle}>
+            {description}
+          </p>
+        </div>
+        <div className="flex flex-col gap-5">
+          <h1 className="text-5xl uppercase" style={serifStyle}>
+            The background
+          </h1>
+          <p className="text-xl" style={sansStyle}>
+            {backgroundText}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -12,10 +12,9 @@ export default function NiraOutcome() {
           <p className="text-xl" style={sansStyle}>
             The results from the user tests demonstrated significant
             improvements in perceived usability and safety compared to the
-            original design. Johanna's ability to balance technical and design
-            aspects, while addressing user needs, was instrumental in delivering
-            a safer, more usability-focused foundation for the system's future
-            development.
+            original design. Balancing technical and design aspects while
+            addressing user needs was key to delivering a safer, more
+            usability-focused foundation for the system's future development.
           </p>
         </div>
 

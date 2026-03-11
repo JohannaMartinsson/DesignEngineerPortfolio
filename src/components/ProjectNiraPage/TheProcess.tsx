@@ -19,13 +19,13 @@ export default function NiraTheProcess() {
               01 Initial investigation
             </h3>
             <p className="text-xl" style={sansStyle}>
-              During this project, Johanna worked broadly with both UX design
-              and frontend development, owning the design process end-to-end.
-              She collaborated closely with end users, i.e., the drivers, to
-              identify issues with the tool, quickly familiarizing herself with
+              During this project, I worked broadly with both UX design and
+              frontend development, owning the design process end-to-end. I
+              collaborated closely with end users, i.e., the drivers, to
+              identify issues with the tool, quickly familiarizing myself with
               its technical details, usage, and workflow to understand the root
-              causes of their challenges. Her ability to rapidly grasp the
-              system's intricacies allowed her to draw effective conclusions
+              causes of their challenges. My ability to rapidly grasp the
+              system's intricacies allowed me to draw effective conclusions
               about the key considerations for designing in-car software that
               prioritizes usability and safety.
             </p>
@@ -36,7 +36,7 @@ export default function NiraTheProcess() {
             </h3>
             <div className="flex flex-col gap-4">
               <p className="text-xl" style={sansStyle}>
-                Based on the insights from the initial investigation, Johanna
+                Based on the insights from the initial investigation, I
                 iteratively developed a new interface design in Figma, refining
                 it based on safety and usability requirements.
               </p>
@@ -128,7 +128,7 @@ export default function NiraTheProcess() {
             <div className="flex flex-col gap-4">
               <p className="text-xl" style={sansStyle}>
                 To evaluate the frontend prototype and compare it to the
-                original design, two types ot user tests were conducted.
+                original design, two types of user tests were conducted.
               </p>
               <p className="text-xl" style={sansStyle}>
                 The first test group performed driving tests where they drove

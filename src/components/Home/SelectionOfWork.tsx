@@ -3,10 +3,10 @@ import { serifStyle, sansStyle } from "../../styles/fonts";
 
 const projects = [
   {
-    title: "Hubexo",
-    description: "Digitalizing the construction industry",
-    slug: "hubexo",
-    image: "/images/SelectionOfWork/ProjectHubexo.png",
+    title: "Netlight BPE",
+    description: "Internal tooling for a consulting firm",
+    slug: "bpe",
+    image: "/images/SelectionOfWork/ProjectBPE.png",
   },
   {
     title: "NIRA Dynamics",
@@ -16,10 +16,10 @@ const projects = [
     image: "/images/SelectionOfWork/ProjectNIRA.png",
   },
   {
-    title: "Netlight BPE",
-    description: "Internal tooling for a consulting firm",
-    slug: "bpe",
-    image: "/images/SelectionOfWork/ProjectBPE.png",
+    title: "Hubexo",
+    description: "Digitalizing the construction industry",
+    slug: "hubexo",
+    image: "/images/SelectionOfWork/ProjectHubexo.png",
   },
 ];
 
@@ -27,10 +27,7 @@ export default function SelectionOfWork() {
   return (
     <div id="work" className="w-full flex flex-col items-center">
       <div className="w-4/5 flex flex-col mb-20 gap-12">
-        <h2
-          className="text-5xl uppercase"
-          style={serifStyle}
-        >
+        <h2 className="text-5xl uppercase" style={serifStyle}>
           Selection of work
         </h2>
 
@@ -53,19 +50,13 @@ export default function SelectionOfWork() {
                     </div>
 
                     <div>
-                      <h3
-                        className="text-4xl"
-                        style={serifStyle}
-                      >
+                      <h3 className="text-4xl" style={serifStyle}>
                         {project.title}
                       </h3>
                     </div>
 
                     <div>
-                      <p
-                        className="text-xl"
-                        style={sansStyle}
-                      >
+                      <p className="text-xl" style={sansStyle}>
                         {project.description}
                       </p>
                     </div>

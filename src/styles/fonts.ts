@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 
 export const serifStyle: CSSProperties = {
-  fontFamily: "Bodoni Moda, serif",
+  fontFamily: "Lora, serif",
   fontWeight: 400,
   letterSpacing: "0.04em",
 };

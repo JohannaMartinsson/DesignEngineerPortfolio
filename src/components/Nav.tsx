@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 
 const links = [
   { label: "Home", to: "/" },
-  { label: "Project Hubexo", to: "/hubexo" },
-  { label: "Project NIRA", to: "/nira" },
   { label: "Project BPE", to: "/bpe" },
+  { label: "Project NIRA", to: "/nira" },
+  { label: "Project Hubexo", to: "/hubexo" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -25,7 +25,9 @@ export default function Nav() {
               className={({ isActive }) =>
                 [
                   "font-sans text-sm no-underline transition-colors duration-200",
-                  isActive ? "text-black font-semibold" : "text-black hover:text-[var(--color-muted)]",
+                  isActive
+                    ? "text-black font-semibold"
+                    : "text-black hover:text-muted",
                 ].join(" ")
               }
               end={to === "/"}

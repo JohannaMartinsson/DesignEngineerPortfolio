@@ -79,6 +79,49 @@ export default function BpeTheProcess() {
               </p>
             </div>
           </div>
+          <div className="flex w-full gap-5 justify-between">
+            <div>
+              <img src="/images/ProjectBPE/BookletCover.png" />
+            </div>
+            <div>
+              <img src="/images/ProjectBPE/BookletContent1.png" />
+            </div>
+            <div>
+              <img src="/images/ProjectBPE/BookletContent2.png" />
+            </div>
+          </div>
+          <div className="flex w-full gap-10 justify-between">
+            <div className="w-1/3">
+              <img src="/images/ProjectBPE/WelcomeSign.png" />
+            </div>
+            <div className="flex flex-col w-3/4 justify-between ">
+              <div className="flex w-full justify-between gap-10">
+                <div className="w-1/2">
+                  <img src="/images/ProjectBPE/Card1.png" />
+                </div>
+                <div className="w-1/2">
+                  <img src="/images/ProjectBPE/Card2.png" />
+                </div>
+                <div className="w-1/2">
+                  <img src="/images/ProjectBPE/Card3.png" />
+                </div>
+                <div className="w-1/2">
+                  <img src="/images/ProjectBPE/CardBack.png" />
+                </div>
+              </div>
+              <div className="flex w-full gap-10 justify-between items-end">
+                <div className="">
+                  <img
+                    src="/images/ProjectBPE/IslandSign.png"
+                    className="w-630"
+                  />
+                </div>
+                <div className="">
+                  <img src="/images/ProjectBPE/MentorGuide.png" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

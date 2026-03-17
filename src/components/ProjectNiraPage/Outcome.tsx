@@ -1,10 +1,17 @@
-import { serifStyle, sansStyle } from "../../styles/fonts";
+import { serifStyle, sansStyle, quotationStyle } from "../../styles/fonts";
+import { useInView } from "../../hooks/useInView";
 
 export default function NiraOutcome() {
+  const [textRef, textVisible] = useInView();
+  const [quotesRef, quotesVisible] = useInView();
+
   return (
     <div id="niraoutcome" className="w-full flex flex-col items-center ">
       <div className="w-4/5 flex flex-col items-center">
-        <div className="flex flex-col gap-5">
+        <div
+          ref={textRef}
+          className={`flex flex-col gap-5 ${textVisible ? "animate-fade-up" : "opacity-0"}`}
+        >
           <h2 className="text-5xl uppercase" style={serifStyle}>
             The outcome
           </h2>
@@ -18,10 +25,12 @@ export default function NiraOutcome() {
           </p>
         </div>
 
-        <div className="pt-16 pb-14 flex justify-between gap-20">
-          <div className="flex gap-3 w-full">
-            <h3 className="text-9xl" style={serifStyle}>
-              “
+        <div ref={quotesRef} className="pt-16 pb-14 flex justify-between gap-20">
+          <div
+            className={`flex gap-3 w-full ${quotesVisible ? "animate-fade-up" : "opacity-0"}`}
+          >
+            <h3 className="text-9xl" style={quotationStyle}>
+              "
             </h3>
             <p className="text-xl pt-7 italic" style={sansStyle}>
               The new interface was much clearer than the original. The original
@@ -29,9 +38,12 @@ export default function NiraOutcome() {
               needed information in the new one.
             </p>
           </div>
-          <div className="flex gap-3 w-full">
-            <h3 className="text-9xl" style={serifStyle}>
-              “
+          <div
+            className={`flex gap-3 w-full ${quotesVisible ? "animate-fade-up" : "opacity-0"}`}
+            style={{ animationDelay: "150ms" }}
+          >
+            <h3 className="text-9xl" style={quotationStyle}>
+              "
             </h3>
             <p className="text-xl pt-7 italic" style={sansStyle}>
               It feels like a much safer product to use in traffic. It's much

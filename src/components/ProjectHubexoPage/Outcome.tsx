@@ -1,10 +1,17 @@
 import { serifStyle, sansStyle } from "../../styles/fonts";
+import { useInView } from "../../hooks/useInView";
 
 export default function HubexoOutcome() {
+  const [textRef, textVisible] = useInView();
+  const [valuesRef, valuesVisible] = useInView();
+
   return (
     <div id="hubexooutcome" className="w-full flex flex-col items-center ">
       <div className="w-4/5 flex flex-col items-center">
-        <div className="flex flex-col gap-5">
+        <div
+          ref={textRef}
+          className={`flex flex-col gap-5 ${textVisible ? "animate-fade-up" : "opacity-0"}`}
+        >
           <h2 className="text-5xl uppercase" style={serifStyle}>
             The outcome
           </h2>
@@ -26,8 +33,10 @@ export default function HubexoOutcome() {
           </p>
         </div>
 
-        <div className="pt-16 pb-14 flex justify-between gap-20">
-          <div className="flex flex-col gap-2 w-full">
+        <div ref={valuesRef} className="pt-16 pb-14 flex justify-between gap-20">
+          <div
+            className={`flex flex-col gap-2 w-full ${valuesVisible ? "animate-fade-up" : "opacity-0"}`}
+          >
             <h3 className="text-3xl uppercase" style={serifStyle}>
               Business value
             </h3>
@@ -36,7 +45,7 @@ export default function HubexoOutcome() {
               style={sansStyle}
             >
               <li>
-                Enhanced Hubexo’s competitive positioning through a modern,
+                Enhanced Hubexo's competitive positioning through a modern,
                 user-centric interface that distinguishes their solution from
                 legacy platforms
               </li>
@@ -52,7 +61,10 @@ export default function HubexoOutcome() {
               </li>
             </ul>
           </div>
-          <div className="flex flex-col gap-2 w-full">
+          <div
+            className={`flex flex-col gap-2 w-full ${valuesVisible ? "animate-fade-up" : "opacity-0"}`}
+            style={{ animationDelay: "150ms" }}
+          >
             <h3 className="text-3xl uppercase" style={serifStyle}>
               User value
             </h3>

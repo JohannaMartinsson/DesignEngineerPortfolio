@@ -1,10 +1,17 @@
 import { serifStyle, sansStyle } from "../../styles/fonts";
+import { useInView } from "../../hooks/useInView";
 
 export default function BpeOutcome() {
+  const [textRef, textVisible] = useInView();
+  const [valuesRef, valuesVisible] = useInView();
+
   return (
     <div id="bpeoutcome" className="w-full flex flex-col items-center">
       <div className="w-4/5 flex flex-col items-center">
-        <div className="flex flex-col gap-5">
+        <div
+          ref={textRef}
+          className={`flex flex-col gap-5 ${textVisible ? "animate-fade-up" : "opacity-0"}`}
+        >
           <h2 className="text-5xl uppercase" style={serifStyle}>
             The outcome
           </h2>
@@ -30,8 +37,13 @@ export default function BpeOutcome() {
           </p>
         </div>
 
-        <div className="pt-16 pb-14 flex justify-between gap-20">
-          <div className="flex flex-col gap-2 w-full">
+        <div
+          ref={valuesRef}
+          className="pt-16 pb-14 flex justify-between gap-20"
+        >
+          <div
+            className={`flex flex-col gap-2 w-full ${valuesVisible ? "animate-fade-up" : "opacity-0"}`}
+          >
             <h3 className="text-3xl uppercase" style={serifStyle}>
               Design value
             </h3>
@@ -55,7 +67,10 @@ export default function BpeOutcome() {
               </li>
             </ul>
           </div>
-          <div className="flex flex-col gap-2 w-full">
+          <div
+            className={`flex flex-col gap-2 w-full ${valuesVisible ? "animate-fade-up" : "opacity-0"}`}
+            style={{ animationDelay: "150ms" }}
+          >
             <h3 className="text-3xl uppercase" style={serifStyle}>
               Event value
             </h3>

@@ -1,20 +1,42 @@
 import { serifStyle, sansStyle } from "../../styles/fonts";
+import { brown } from "../../styles/colors";
+import { useInView } from "../../hooks/useInView";
 
 export default function NiraTheProcess() {
+  const [headingRef, headingVisible] = useInView();
+  const [processImageRef, processImageVisible] = useInView<HTMLImageElement>(0.1);
+  const [step1Ref, step1Visible] = useInView();
+  const [step2Ref, step2Visible] = useInView();
+  const [iterationsRef, iterationsVisible] = useInView(0.05);
+  const [step3Ref, step3Visible] = useInView();
+  const [step4Ref, step4Visible] = useInView();
+  const [statsRef, statsVisible] = useInView();
+
   return (
     <div id="niraprocess" className="w-full flex flex-col items-center">
       <div
         className="w-full flex flex-col items-center"
-        style={{ backgroundColor: "#241a14" }}
+        style={{ backgroundColor: brown }}
       >
         <div className="py-20 w-4/5 flex flex-col gap-10 text-white">
-          <h2 className="text-5xl uppercase" style={serifStyle}>
+          <h2
+            ref={headingRef}
+            className={`text-5xl uppercase ${headingVisible ? "animate-fade-up" : "opacity-0"}`}
+            style={serifStyle}
+          >
             The process
           </h2>
 
-          <img src="/images/ProjectNIRA/ProcessImage.png" className="w-full" />
+          <img
+            ref={processImageRef}
+            src="/images/ProjectNIRA/ProcessImage.png"
+            className={`w-full ${processImageVisible ? "animate-fade-up" : "opacity-0"}`}
+          />
 
-          <div className="flex flex-col gap-5">
+          <div
+            ref={step1Ref}
+            className={`flex flex-col gap-5 ${step1Visible ? "animate-fade-up" : "opacity-0"}`}
+          >
             <h3 className="text-3xl uppercase" style={serifStyle}>
               01 Initial investigation
             </h3>
@@ -30,7 +52,11 @@ export default function NiraTheProcess() {
               prioritizes usability and safety.
             </p>
           </div>
-          <div className="flex flex-col gap-5 pt-10">
+
+          <div
+            ref={step2Ref}
+            className={`flex flex-col gap-5 pt-10 ${step2Visible ? "animate-fade-up" : "opacity-0"}`}
+          >
             <h3 className="text-3xl uppercase" style={serifStyle}>
               02 Iterative prototyping
             </h3>
@@ -60,7 +86,10 @@ export default function NiraTheProcess() {
         </div>
       </div>
 
-      <div className="w-4/5 flex flex-col py-20">
+      <div
+        ref={iterationsRef}
+        className={`w-4/5 flex flex-col py-20 ${iterationsVisible ? "animate-fade-up" : "opacity-0"}`}
+      >
         <div className="flex items-center">
           <p className="text-md w-1/4 text-center mr-5" style={sansStyle}>
             Going from an original interface cramped with unnecessary
@@ -107,10 +136,13 @@ export default function NiraTheProcess() {
 
       <div
         className="w-full flex flex-col items-center"
-        style={{ backgroundColor: "#241a14" }}
+        style={{ backgroundColor: brown }}
       >
         <div className="py-20 w-4/5 flex flex-col gap-10 text-white">
-          <div className="flex flex-col gap-5">
+          <div
+            ref={step3Ref}
+            className={`flex flex-col gap-5 ${step3Visible ? "animate-fade-up" : "opacity-0"}`}
+          >
             <h3 className="text-3xl uppercase" style={serifStyle}>
               03 Implementation
             </h3>
@@ -121,7 +153,11 @@ export default function NiraTheProcess() {
               literature
             </p>
           </div>
-          <div className="flex flex-col gap-5 pt-10">
+
+          <div
+            ref={step4Ref}
+            className={`flex flex-col gap-5 pt-10 ${step4Visible ? "animate-fade-up" : "opacity-0"}`}
+          >
             <h3 className="text-3xl uppercase" style={serifStyle}>
               04 User testing & evaluation
             </h3>
@@ -150,8 +186,12 @@ export default function NiraTheProcess() {
               </p>
             </div>
           </div>
-          <div className="pt-10 flex justify-center gap-30">
-            <div className="flex flex-col items-center gap-5 ">
+
+          <div
+            ref={statsRef}
+            className={`pt-10 flex justify-center gap-30 ${statsVisible ? "animate-fade-up" : "opacity-0"}`}
+          >
+            <div className="flex flex-col items-center gap-5">
               <h3 className="text-7xl" style={serifStyle}>
                 52
               </h3>
@@ -159,7 +199,10 @@ export default function NiraTheProcess() {
                 Average SUS score for original interface
               </p>
             </div>
-            <div className="flex flex-col items-center gap-5 ">
+            <div
+              className="flex flex-col items-center gap-5"
+              style={{ animationDelay: "150ms" }}
+            >
               <h3 className="text-7xl" style={serifStyle}>
                 89
               </h3>

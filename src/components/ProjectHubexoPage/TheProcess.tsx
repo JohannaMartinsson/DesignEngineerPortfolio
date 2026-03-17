@@ -1,18 +1,36 @@
 import { serifStyle, sansStyle } from "../../styles/fonts";
+import { brown } from "../../styles/colors";
+import { useInView } from "../../hooks/useInView";
 
 export default function HubexoTheProcess() {
+  const [headingRef, headingVisible] = useInView();
+  const [step1Ref, step1Visible] = useInView();
+  const [row1Ref, row1Visible] = useInView(0.1);
+  const [row2Ref, row2Visible] = useInView(0.1);
+  const [row3Ref, row3Visible] = useInView(0.2);
+  const [step2Ref, step2Visible] = useInView();
+  const [flowImage1Ref, flowImage1Visible] = useInView<HTMLImageElement>(0.1);
+  const [flowImage2Ref, flowImage2Visible] = useInView<HTMLImageElement>(0.1);
+
   return (
     <div id="hubexoprocess" className="w-full flex flex-col items-center">
       <div
         className="w-full flex flex-col items-center"
-        style={{ backgroundColor: "#241a14" }}
+        style={{ backgroundColor: brown }}
       >
         <div className="py-20 w-4/5 flex flex-col gap-10 text-white">
-          <h2 className="text-5xl uppercase" style={serifStyle}>
+          <h2
+            ref={headingRef}
+            className={`text-5xl uppercase ${headingVisible ? "animate-fade-up" : "opacity-0"}`}
+            style={serifStyle}
+          >
             The process
           </h2>
 
-          <div className="flex flex-col gap-5">
+          <div
+            ref={step1Ref}
+            className={`flex flex-col gap-5 ${step1Visible ? "animate-fade-up" : "opacity-0"}`}
+          >
             <h3 className="text-3xl uppercase" style={serifStyle}>
               01 The e-tendering MVP
             </h3>
@@ -27,47 +45,64 @@ export default function HubexoTheProcess() {
               improvements, responsive layouts, and user experience enhancements
               to ensure platform consistency.
             </p>
-            <div className="flex flex-col gap-12 pt-10">
-              <div className="flex w-full h-70 items-start justify-between">
-                <img
-                  src="/images/ProjectHubexo/MarketTenderCard.png"
-                  className="h-full"
-                />
-                <div className="flex flex-col h-full justify-between w-[70%]">
+          </div>
+
+          <div className="flex flex-col gap-12 pt-10">
+            {/* Row 1: tall card left, stacked cards right */}
+            <div
+              ref={row1Ref}
+              className="flex w-full h-70 items-start justify-between"
+            >
+              <img
+                src="/images/ProjectHubexo/MarketTenderCard.png"
+                className={`h-full ${row1Visible ? "animate-fade-left" : "opacity-0"}`}
+              />
+              <div className="flex flex-col h-full justify-between w-[70%]">
+                {[
+                  "TenderCardDraft",
+                  "TenderCardPublished",
+                  "TenderCardReview",
+                  "TenderCardAwarded",
+                ].map((name, i) => (
                   <img
-                    src="/images/ProjectHubexo/TenderCardDraft.png"
-                    className="w-full"
+                    key={name}
+                    src={`/images/ProjectHubexo/${name}.png`}
+                    className={`w-full ${row1Visible ? "animate-fade-right" : "opacity-0"}`}
+                    style={{ animationDelay: `${i * 100}ms` }}
                   />
-                  <img
-                    src="/images/ProjectHubexo/TenderCardPublished.png"
-                    className="w-full"
-                  />
-                  <img
-                    src="/images/ProjectHubexo/TenderCardReview.png"
-                    className="w-full"
-                  />
-                  <img
-                    src="/images/ProjectHubexo/TenderCardAwarded.png"
-                    className="w-full"
-                  />
-                </div>
-              </div>
-              <div className="flex w-full items-start justify-between">
-                <img
-                  src="/images/ProjectHubexo/Dashboard.png"
-                  className="w-[48%]"
-                />
-                <img
-                  src="/images/ProjectHubexo/ProjectDetailsOverview.png"
-                  className="w-[48%]"
-                />
-              </div>
-              <div className="flex w-full justify-center">
-                <img src="/images/ProjectHubexo/ProjectCard.png" />
+                ))}
               </div>
             </div>
+
+            {/* Row 2: two screenshots side by side */}
+            <div
+              ref={row2Ref}
+              className="flex w-full items-start justify-between"
+            >
+              <img
+                src="/images/ProjectHubexo/Dashboard.png"
+                className={`w-[48%] ${row2Visible ? "animate-fade-left" : "opacity-0"}`}
+              />
+              <img
+                src="/images/ProjectHubexo/ProjectDetailsOverview.png"
+                className={`w-[48%] ${row2Visible ? "animate-fade-right" : "opacity-0"}`}
+                style={{ animationDelay: "150ms" }}
+              />
+            </div>
+
+            {/* Row 3: centered card */}
+            <div ref={row3Ref} className="flex w-full justify-center">
+              <img
+                src="/images/ProjectHubexo/ProjectCard.png"
+                className={row3Visible ? "animate-fade-up" : "opacity-0"}
+              />
+            </div>
           </div>
-          <div className="flex flex-col gap-5 pt-10">
+
+          <div
+            ref={step2Ref}
+            className={`flex flex-col gap-5 pt-10 ${step2Visible ? "animate-fade-up" : "opacity-0"}`}
+          >
             <h3 className="text-3xl uppercase" style={serifStyle}>
               02 Continuing the work
             </h3>
@@ -77,7 +112,7 @@ export default function HubexoTheProcess() {
                 sole designer. This required me to take full responsibility for
                 all design work and independently manage every aspect of the
                 design process. By bridging design and development, I
-                accelerated feature delivery and strengthened the product’s
+                accelerated feature delivery and strengthened the product's
                 overall quality.
               </p>
               <p className="text-xl" style={sansStyle}>
@@ -89,8 +124,17 @@ export default function HubexoTheProcess() {
               </p>
             </div>
           </div>
-          <img src="/images/ProjectHubexo/SignupFlow.png" className="w-full" />
-          <img src="/images/ProjectHubexo/Ownerflow.png" className="w-full" />
+
+          <img
+            ref={flowImage1Ref}
+            src="/images/ProjectHubexo/SignupFlow.png"
+            className={`w-full ${flowImage1Visible ? "animate-fade-left" : "opacity-0"}`}
+          />
+          <img
+            ref={flowImage2Ref}
+            src="/images/ProjectHubexo/Ownerflow.png"
+            className={`w-full ${flowImage2Visible ? "animate-fade-right" : "opacity-0"}`}
+          />
         </div>
       </div>
     </div>

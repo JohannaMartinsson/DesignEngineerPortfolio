@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const links = [
   { label: "Home", to: "/" },
-  { label: "Project BPE", to: "/bpe" },
+  { label: "Project Netlight BPE", to: "/bpe" },
   { label: "Project NIRA", to: "/nira" },
   { label: "Project Hubexo", to: "/hubexo" },
   { label: "Contact", to: "/contact" },

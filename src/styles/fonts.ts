@@ -9,3 +9,7 @@ export const serifStyle: CSSProperties = {
 export const sansStyle: CSSProperties = {
   fontFamily: "DM Sans, sans-serif",
 };
+
+export const quotationStyle: CSSProperties = {
+  fontFamily: "EB Garamond, serif",
+};

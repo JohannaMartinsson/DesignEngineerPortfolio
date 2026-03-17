@@ -1,18 +1,34 @@
 import { serifStyle, sansStyle } from "../../styles/fonts";
+import { brown } from "../../styles/colors";
+import { useInView } from "../../hooks/useInView";
 
 export default function BpeTheProcess() {
+  const [headingRef, headingVisible] = useInView();
+  const [step1Ref, step1Visible] = useInView();
+  const [step2Ref, step2Visible] = useInView();
+  const [step3Ref, step3Visible] = useInView();
+  const [images1Ref, images1Visible] = useInView(0.1);
+  const [images2Ref, images2Visible] = useInView(0.05);
+
   return (
     <div id="bpeprocess" className="w-full flex flex-col items-center">
       <div
         className="w-full flex flex-col items-center"
-        style={{ backgroundColor: "#241a14" }}
+        style={{ backgroundColor: brown }}
       >
         <div className="py-20 w-4/5 flex flex-col gap-10 text-white">
-          <h2 className="text-5xl uppercase" style={serifStyle}>
+          <h2
+            ref={headingRef}
+            className={`text-5xl uppercase ${headingVisible ? "animate-fade-up" : "opacity-0"}`}
+            style={serifStyle}
+          >
             The process
           </h2>
 
-          <div className="flex flex-col gap-5">
+          <div
+            ref={step1Ref}
+            className={`flex flex-col gap-5 ${step1Visible ? "animate-fade-up" : "opacity-0"}`}
+          >
             <h3 className="text-3xl uppercase" style={serifStyle}>
               01 Understanding the theme
             </h3>
@@ -28,7 +44,10 @@ export default function BpeTheProcess() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-5 pt-10">
+          <div
+            ref={step2Ref}
+            className={`flex flex-col gap-5 pt-10 ${step2Visible ? "animate-fade-up" : "opacity-0"}`}
+          >
             <h3 className="text-3xl uppercase" style={serifStyle}>
               02 Navigating the creative brief
             </h3>
@@ -54,7 +73,10 @@ export default function BpeTheProcess() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-5 pt-10">
+          <div
+            ref={step3Ref}
+            className={`flex flex-col gap-5 pt-10 ${step3Visible ? "animate-fade-up" : "opacity-0"}`}
+          >
             <h3 className="text-3xl uppercase" style={serifStyle}>
               03 Producing the material
             </h3>
@@ -79,44 +101,59 @@ export default function BpeTheProcess() {
               </p>
             </div>
           </div>
-          <div className="flex w-full gap-5 justify-between">
-            <div>
+
+          {/* Booklet row: left from left, middle up, right from right */}
+          <div ref={images1Ref} className="flex w-full gap-5 justify-between">
+            <div className={images1Visible ? "animate-fade-left" : "opacity-0"}>
               <img src="/images/ProjectBPE/BookletCover.png" />
             </div>
-            <div>
+            <div
+              className={images1Visible ? "animate-fade-up" : "opacity-0"}
+              style={{ animationDelay: "150ms" }}
+            >
               <img src="/images/ProjectBPE/BookletContent1.png" />
             </div>
-            <div>
+            <div
+              className={images1Visible ? "animate-fade-right" : "opacity-0"}
+              style={{ animationDelay: "300ms" }}
+            >
               <img src="/images/ProjectBPE/BookletContent2.png" />
             </div>
           </div>
-          <div className="flex w-full gap-10 justify-between">
-            <div className="w-1/3">
+
+          {/* Complex row: welcome sign left, cards cascade up, bottom row split */}
+          <div ref={images2Ref} className="flex w-full gap-10 justify-between">
+            <div
+              className={`w-1/3 ${images2Visible ? "animate-fade-left" : "opacity-0"}`}
+            >
               <img src="/images/ProjectBPE/WelcomeSign.png" />
             </div>
-            <div className="flex flex-col w-3/4 justify-between ">
+            <div className="flex flex-col w-3/4 justify-between">
               <div className="flex w-full justify-between gap-10">
-                <div className="w-1/2">
-                  <img src="/images/ProjectBPE/Card1.png" />
-                </div>
-                <div className="w-1/2">
-                  <img src="/images/ProjectBPE/Card2.png" />
-                </div>
-                <div className="w-1/2">
-                  <img src="/images/ProjectBPE/Card3.png" />
-                </div>
-                <div className="w-1/2">
-                  <img src="/images/ProjectBPE/CardBack.png" />
-                </div>
+                {["Card1", "Card2", "Card3", "CardBack"].map((name, i) => (
+                  <div
+                    key={name}
+                    className={`w-1/2 ${images2Visible ? "animate-fade-up" : "opacity-0"}`}
+                    style={{ animationDelay: `${i * 100}ms` }}
+                  >
+                    <img src={`/images/ProjectBPE/${name}.png`} />
+                  </div>
+                ))}
               </div>
               <div className="flex w-full gap-10 justify-between items-end">
-                <div className="">
+                <div
+                  className={images2Visible ? "animate-fade-left" : "opacity-0"}
+                  style={{ animationDelay: "200ms" }}
+                >
                   <img
                     src="/images/ProjectBPE/IslandSign.png"
                     className="w-630"
                   />
                 </div>
-                <div className="">
+                <div
+                  className={images2Visible ? "animate-fade-right" : "opacity-0"}
+                  style={{ animationDelay: "300ms" }}
+                >
                   <img src="/images/ProjectBPE/MentorGuide.png" />
                 </div>
               </div>

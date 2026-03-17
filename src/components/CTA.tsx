@@ -1,14 +1,37 @@
+import { useEffect, useRef, useState } from "react";
 import { serifStyle, sansStyle } from "../styles/fonts";
+import { brown } from "../styles/colors";
 
 export default function CTA() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
       id="cta"
       className="w-full py-8 flex flex-col items-center justify-center"
-      style={{ backgroundColor: "#241a14" }}
+      style={{ backgroundColor: brown }}
     >
-      <div className="w-4/5 flex items-center justify-between">
-        <div className="flex flex-col gap-8">
+      <div ref={ref} className="w-4/5 flex items-stretch justify-between">
+        <div
+          className={`flex flex-col gap-8 ${
+            isVisible ? "animate-fade-up" : "opacity-0"
+          }`}
+        >
           <div className="flex flex-col gap-3">
             <div className="flex flex-col gap-1">
               <p className="text-xl w-full text-white" style={sansStyle}>
@@ -53,7 +76,18 @@ export default function CTA() {
           </div>
         </div>
 
-        <div className="text-white">place image here</div>
+        <div
+          className={`rounded-full overflow-hidden ${
+            isVisible ? "animate-fade-up" : "opacity-0"
+          }`}
+          style={{ animationDelay: "150ms" }}
+        >
+          <img
+            src="/images/SelectionOfWork/Jagmedm%C3%A5stavla.jpg"
+            alt="Johanna Martinsson"
+            className="h-55 w-55 object-cover"
+          />
+        </div>
       </div>
     </div>
   );

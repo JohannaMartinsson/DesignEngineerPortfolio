@@ -1,10 +1,12 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { serifStyle, sansStyle } from "../../styles/fonts";
 
 const projects = [
   {
-    title: "Netlight BPE",
-    description: "Internal tooling for a consulting firm",
+    title: "Netlight Business Planning Exhibition",
+    description:
+      "Visualizing the business plan for Netlight Stockholm’s 800+ employees",
     slug: "bpe",
     image: "/images/SelectionOfWork/ProjectBPE.png",
   },
@@ -24,19 +26,40 @@ const projects = [
 ];
 
 export default function SelectionOfWork() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div id="work" className="w-full flex flex-col items-center">
-      <div className="w-4/5 flex flex-col mb-20 gap-12">
-        <h2 className="text-5xl uppercase" style={serifStyle}>
+      <div ref={ref} className="w-4/5 flex flex-col mb-20 gap-12">
+        <h2
+          className={`text-5xl uppercase ${isVisible ? "animate-fade-up" : "opacity-0"}`}
+          style={serifStyle}
+        >
           Selection of work
         </h2>
 
         <div className="flex justify-between w-full">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <Link
               key={project.slug}
               to={`/${project.slug}`}
-              className="block w-[25%] no-underline text-inherit"
+              className={`block w-[30%] no-underline text-inherit ${isVisible ? "animate-fade-up" : "opacity-0"}`}
+              style={{ animationDelay: `${150 + index * 150}ms` }}
             >
               <article className="group cursor-pointer h-full">
                 <div className="flex flex-col justify-between h-full">
@@ -61,12 +84,6 @@ export default function SelectionOfWork() {
                       </p>
                     </div>
                   </div>
-                  <span
-                    className="text-md font-medium no-underline hover:underline transition-colors"
-                    style={sansStyle}
-                  >
-                    See full project →
-                  </span>
                 </div>
               </article>
             </Link>

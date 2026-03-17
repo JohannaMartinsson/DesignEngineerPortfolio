@@ -1,5 +1,6 @@
 import Nav from "../components/Nav";
 import { serifStyle, sansStyle } from "../styles/fonts";
+import { brown } from "../styles/colors";
 
 export default function ContactPage() {
   return (
@@ -9,11 +10,13 @@ export default function ContactPage() {
         <div
           id="contact"
           className="w-full h-screen flex flex-col items-center"
-          style={{ backgroundColor: "#241a14" }}
+          style={{ backgroundColor: brown }}
         >
           <div className="w-4/5 flex justify-between">
             <div className="flex flex-col gap-20">
-              <div className="flex flex-col gap-3 mt-48">
+              <div
+                className="flex flex-col gap-3 mt-48 animate-fade-left"
+              >
                 <p className="text-2xl w-full text-white" style={sansStyle}>
                   Need someone to bridge the gap between
                 </p>
@@ -42,10 +45,16 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <p className="text-2xl w-full text-white" style={sansStyle}>
+              <p
+                className="text-2xl w-full text-white animate-fade-left"
+                style={{ ...sansStyle, animationDelay: "150ms" }}
+              >
                 Let's grab a coffee (maybe in a fancy handmade mug)!
               </p>
-              <div className="flex flex-col gap-1 pt-6">
+              <div
+                className="flex flex-col gap-1 pt-6 animate-fade-left"
+                style={{ animationDelay: "300ms" }}
+              >
                 <p className="text-2xl w-full text-white" style={sansStyle}>
                   johanna.martinsson@netlight.com
                 </p>
@@ -61,7 +70,10 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="shrink-0 self-end mr-20 mt-35">
+            <div
+              className="shrink-0 self-end mr-20 mt-35 animate-fade-right"
+              style={{ animationDelay: "100ms" }}
+            >
               <div
                 className="w-85 h-140 overflow-hidden rotate-18"
                 style={{ borderRadius: "50% / 50%" }}

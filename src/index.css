@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 @import "tailwindcss";
 
 @keyframes fadeUp {
@@ -35,7 +35,6 @@
 }
 
 @theme {
-  --font-display: Lora, serif;
   --font-sans: system-ui, sans-serif;
   --font-body: DM Sans, sans-serif;
 

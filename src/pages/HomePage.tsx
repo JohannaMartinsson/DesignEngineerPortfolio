@@ -2,7 +2,7 @@ import Nav from "../components/Nav";
 import Hero from "../components/Home/Hero";
 import About from "../components/Home/About";
 import CTA from "../components/CTA";
-import SelectionOfWork from "../components/Home/SelectionOfWork";
+import SelectionOfWork2 from "../components/Home/SelectionOfWork2";
 
 export default function HomePage() {
   return (
@@ -11,7 +11,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <About />
-        <SelectionOfWork />
+        <SelectionOfWork2 />
         <CTA />
       </main>
     </>

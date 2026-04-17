@@ -20,6 +20,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<HomePage />} />
         <Route path="/hubexo" element={<ProjectHubexoPage />} />
         <Route path="/nira" element={<ProjectNiraPage />} />
         <Route path="/bpe" element={<ProjectBpePage />} />

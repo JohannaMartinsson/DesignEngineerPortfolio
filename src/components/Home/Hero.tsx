@@ -14,7 +14,7 @@ const slides = [
   },
   {
     image: "/images/Albert3.png",
-    text: "…or out on a walk with Albert",
+    text: "…or out on a walk with Albert.",
   },
 ];
 

@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import { useState, useEffect } from "react";
 import { serifStyle, sansStyle } from "../../styles/fonts";
 import { brown } from "../../styles/colors";
 
@@ -6,7 +7,34 @@ const fadeUp = (delay: number): CSSProperties => ({
   animationDelay: `${delay}ms`,
 });
 
+const slides = [
+  {
+    image: "/images/Jagmedm%C3%A5stavla.jpg",
+    text: "…or in a pottery studio, working on yet another coffee mug.",
+  },
+  {
+    image: "/images/Albert3.png",
+    text: "…or out on a walk with Albert",
+  },
+];
+
 export default function Hero() {
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => {
+        setSlideIndex((i) => (i + 1) % slides.length);
+        setVisible(true);
+      }, 1500);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const slide = slides[slideIndex];
+
   return (
     <div
       id="home"
@@ -46,18 +74,30 @@ export default function Hero() {
         </div>
 
         <div
-          className="w-70 aspect-7/8 overflow-hidden rounded-t-full h-fit self-end animate-fade-up"
+          className="w-70 h-fit self-end animate-fade-up"
           style={fadeUp(300)}
         >
-          <img
-            src="/images/Jagmedm%C3%A5stavla.jpg"
-            className="w-full h-full object-cover"
-          />
+          <div
+            className="w-full aspect-7/8 overflow-hidden rounded-t-full"
+            style={{
+              opacity: visible ? 1 : 0,
+              transition: "opacity 1.5s ease-in-out",
+            }}
+          >
+            <img src={slide.image} className="w-full h-full object-cover" />
+          </div>
         </div>
       </div>
       <div className="w-4/5 animate-fade-up" style={fadeUp(450)}>
-        <p className="text-2xl w-full text-end text-white" style={sansStyle}>
-          …or in a pottery studio, working on yet another coffee mug.
+        <p
+          className="text-2xl w-full text-end text-white"
+          style={{
+            ...sansStyle,
+            opacity: visible ? 1 : 0,
+            transition: "opacity 1.5s ease-in-out",
+          }}
+        >
+          {slide.text}
         </p>
       </div>
     </div>

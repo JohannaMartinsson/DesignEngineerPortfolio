@@ -83,7 +83,7 @@ export default function CTA() {
           style={{ animationDelay: "150ms" }}
         >
           <img
-            src="/images/SelectionOfWork/Jagmedm%C3%A5stavla.jpg"
+            src="/images/Jagmedm%C3%A5stavla.jpg"
             alt="Johanna Martinsson"
             className="h-55 w-55 object-cover"
           />

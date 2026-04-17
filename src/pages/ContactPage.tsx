@@ -14,9 +14,7 @@ export default function ContactPage() {
         >
           <div className="w-4/5 flex justify-between">
             <div className="flex flex-col gap-20">
-              <div
-                className="flex flex-col gap-3 mt-48 animate-fade-left"
-              >
+              <div className="flex flex-col gap-3 mt-48 animate-fade-left">
                 <p className="text-2xl w-full text-white" style={sansStyle}>
                   Need someone to bridge the gap between
                 </p>
@@ -79,7 +77,7 @@ export default function ContactPage() {
                 style={{ borderRadius: "50% / 50%" }}
               >
                 <img
-                  src="/images/SelectionOfWork/Jagmedm%C3%A5stavla.jpg"
+                  src="/images/Jagmedm%C3%A5stavla.jpg"
                   alt="Johanna Martinsson"
                   className="w-full h-full object-cover -rotate-18 scale-108"
                 />

@@ -21,7 +21,10 @@ export default function Hero() {
           >
             Hi, I'm Johanna
           </h1>
-          <div className="flex flex-col gap-2 animate-fade-up" style={fadeUp(150)}>
+          <div
+            className="flex flex-col gap-2 animate-fade-up"
+            style={fadeUp(150)}
+          >
             <p className="text-2xl w-full text-white" style={sansStyle}>
               You'll find me where
             </p>
@@ -47,7 +50,7 @@ export default function Hero() {
           style={fadeUp(300)}
         >
           <img
-            src="/images/SelectionOfWork/Jagmedm%C3%A5stavla.jpg"
+            src="/images/Jagmedm%C3%A5stavla.jpg"
             className="w-full h-full object-cover"
           />
         </div>

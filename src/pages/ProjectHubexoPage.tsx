@@ -4,6 +4,8 @@ import ProjectHero from "../components/Common/ProjectHero";
 import HubexoOutcome from "../components/ProjectHubexoPage/Outcome";
 import HubexoTheProcess from "../components/ProjectHubexoPage/TheProcess";
 import { serifStyle, sansStyle } from "../styles/fonts";
+import hubexoHeroImg from "../assets/images/SelectionOfWork/ProjectHubexo.png";
+import hubexoLogoImg from "../assets/images/ProjectHubexo/Logo.png";
 
 const hubexoTitle = (
   <>
@@ -34,8 +36,8 @@ export default function ProjectHubexoPage() {
         <ProjectHero
           id="hubexohero"
           title={hubexoTitle}
-          image="/images/SelectionOfWork/ProjectHubexo.png"
-          logo="/images/ProjectHubexo/Logo.png"
+          image={hubexoHeroImg}
+          logo={hubexoLogoImg}
           description={description}
           backgroundText={backgroundText}
         />

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { serifStyle, sansStyle } from "../styles/fonts";
 import { brown } from "../styles/colors";
+import johannaImg from "../assets/images/Jagmedmåstavla.jpg";
 
 export default function CTA() {
   const ref = useRef<HTMLDivElement>(null);
@@ -83,7 +84,7 @@ export default function CTA() {
           style={{ animationDelay: "150ms" }}
         >
           <img
-            src="/images/Jagmedm%C3%A5stavla.jpg"
+            src={johannaImg}
             alt="Johanna Martinsson"
             className="h-55 w-55 object-cover"
           />

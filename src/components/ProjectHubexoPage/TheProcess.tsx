@@ -1,6 +1,23 @@
 import { serifStyle, sansStyle } from "../../styles/fonts";
 import { brown } from "../../styles/colors";
 import { useInView } from "../../hooks/useInView";
+import marketTenderCard from "../../assets/images/ProjectHubexo/MarketTenderCard.png";
+import tenderCardDraft from "../../assets/images/ProjectHubexo/TenderCardDraft.png";
+import tenderCardPublished from "../../assets/images/ProjectHubexo/TenderCardPublished.png";
+import tenderCardReview from "../../assets/images/ProjectHubexo/TenderCardReview.png";
+import tenderCardAwarded from "../../assets/images/ProjectHubexo/TenderCardAwarded.png";
+import dashboard from "../../assets/images/ProjectHubexo/Dashboard.png";
+import projectDetailsOverview from "../../assets/images/ProjectHubexo/ProjectDetailsOverview.png";
+import projectCard from "../../assets/images/ProjectHubexo/ProjectCard.png";
+import signupFlow from "../../assets/images/ProjectHubexo/SignupFlow.png";
+import ownerflow from "../../assets/images/ProjectHubexo/Ownerflow.png";
+
+const tenderCards: Record<string, string> = {
+  TenderCardDraft: tenderCardDraft,
+  TenderCardPublished: tenderCardPublished,
+  TenderCardReview: tenderCardReview,
+  TenderCardAwarded: tenderCardAwarded,
+};
 
 export default function HubexoTheProcess() {
   const [headingRef, headingVisible] = useInView();
@@ -54,7 +71,7 @@ export default function HubexoTheProcess() {
               className="flex w-full h-70 items-start justify-between"
             >
               <img
-                src="/images/ProjectHubexo/MarketTenderCard.png"
+                src={marketTenderCard}
                 className={`h-full ${row1Visible ? "animate-fade-left" : "opacity-0"}`}
               />
               <div className="flex flex-col h-full justify-between w-[70%]">
@@ -66,7 +83,7 @@ export default function HubexoTheProcess() {
                 ].map((name, i) => (
                   <img
                     key={name}
-                    src={`/images/ProjectHubexo/${name}.png`}
+                    src={tenderCards[name]}
                     className={`w-full ${row1Visible ? "animate-fade-right" : "opacity-0"}`}
                     style={{ animationDelay: `${i * 100}ms` }}
                   />
@@ -80,11 +97,11 @@ export default function HubexoTheProcess() {
               className="flex w-full items-start justify-between"
             >
               <img
-                src="/images/ProjectHubexo/Dashboard.png"
+                src={dashboard}
                 className={`w-[48%] ${row2Visible ? "animate-fade-left" : "opacity-0"}`}
               />
               <img
-                src="/images/ProjectHubexo/ProjectDetailsOverview.png"
+                src={projectDetailsOverview}
                 className={`w-[48%] ${row2Visible ? "animate-fade-right" : "opacity-0"}`}
                 style={{ animationDelay: "150ms" }}
               />
@@ -93,7 +110,7 @@ export default function HubexoTheProcess() {
             {/* Row 3: centered card */}
             <div ref={row3Ref} className="flex w-full justify-center">
               <img
-                src="/images/ProjectHubexo/ProjectCard.png"
+                src={projectCard}
                 className={row3Visible ? "animate-fade-up" : "opacity-0"}
               />
             </div>
@@ -127,12 +144,12 @@ export default function HubexoTheProcess() {
 
           <img
             ref={flowImage1Ref}
-            src="/images/ProjectHubexo/SignupFlow.png"
+            src={signupFlow}
             className={`w-full ${flowImage1Visible ? "animate-fade-left" : "opacity-0"}`}
           />
           <img
             ref={flowImage2Ref}
-            src="/images/ProjectHubexo/Ownerflow.png"
+            src={ownerflow}
             className={`w-full ${flowImage2Visible ? "animate-fade-right" : "opacity-0"}`}
           />
         </div>

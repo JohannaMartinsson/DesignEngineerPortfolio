@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { serifStyle, sansStyle } from "../../styles/fonts";
+import johannaImg from "../../assets/images/Jagmedmåstavla.jpg";
 
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
@@ -35,7 +36,7 @@ export default function About() {
             style={{ borderRadius: "50% / 50%" }}
           >
             <img
-              src="/images/Jagmedm%C3%A5stavla.jpg"
+              src={johannaImg}
               alt="Johanna Martinsson"
               className="w-full h-full object-cover -rotate-18 scale-108"
             />

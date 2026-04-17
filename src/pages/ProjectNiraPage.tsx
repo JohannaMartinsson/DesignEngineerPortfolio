@@ -4,6 +4,8 @@ import ProjectHero from "../components/Common/ProjectHero";
 import NiraOutcome from "../components/ProjectNiraPage/Outcome";
 import NiraTheProcess from "../components/ProjectNiraPage/TheProcess";
 import { serifStyle, sansStyle } from "../styles/fonts";
+import niraHeroImg from "../assets/images/SelectionOfWork/ProjectNIRA.png";
+import niraLogoImg from "../assets/images/ProjectNIRA/Logo.svg";
 
 const niraTitle = (
   <>
@@ -30,8 +32,8 @@ export default function ProjectNiraPage() {
         <ProjectHero
           id="nirahero"
           title={niraTitle}
-          image="/images/SelectionOfWork/ProjectNIRA.png"
-          logo="/images/ProjectNIRA/Logo.svg"
+          image={niraHeroImg}
+          logo={niraLogoImg}
           description="NIRA Dynamics develops innovative software solutions for automotive systems. The company aims to improve and modernize current technologies to fulfill today's standards for vehicle safety and performance."
           backgroundText="To increase the safety for their test drivers, NIRA was in need of investigating how their internal data acquisition tool could be improved and re-designed. This system was developed without considering safety and usability aspects, taking the engineer's perspective rather than the driver's, which was why improvements were necessary. The aim of the project was therefore to investigate how interfaces of in-car touch screens can be designed in order to ensure the safety of the driver when interacting with the system and at the same time maneuvering the car."
         />

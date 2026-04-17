@@ -1,6 +1,23 @@
 import { serifStyle, sansStyle } from "../../styles/fonts";
 import { brown } from "../../styles/colors";
 import { useInView } from "../../hooks/useInView";
+import bookletCover from "../../assets/images/ProjectBPE/BookletCover.png";
+import bookletContent1 from "../../assets/images/ProjectBPE/BookletContent1.png";
+import bookletContent2 from "../../assets/images/ProjectBPE/BookletContent2.png";
+import welcomeSign from "../../assets/images/ProjectBPE/WelcomeSign.png";
+import card1 from "../../assets/images/ProjectBPE/Card1.png";
+import card2 from "../../assets/images/ProjectBPE/Card2.png";
+import card3 from "../../assets/images/ProjectBPE/Card3.png";
+import cardBack from "../../assets/images/ProjectBPE/CardBack.png";
+import islandSign from "../../assets/images/ProjectBPE/IslandSign.png";
+import mentorGuide from "../../assets/images/ProjectBPE/MentorGuide.png";
+
+const cards: Record<string, string> = {
+  Card1: card1,
+  Card2: card2,
+  Card3: card3,
+  CardBack: cardBack,
+};
 
 export default function BpeTheProcess() {
   const [headingRef, headingVisible] = useInView();
@@ -105,19 +122,19 @@ export default function BpeTheProcess() {
           {/* Booklet row: left from left, middle up, right from right */}
           <div ref={images1Ref} className="flex w-full gap-5 justify-between">
             <div className={images1Visible ? "animate-fade-left" : "opacity-0"}>
-              <img src="/images/ProjectBPE/BookletCover.png" />
+              <img src={bookletCover} />
             </div>
             <div
               className={images1Visible ? "animate-fade-up" : "opacity-0"}
               style={{ animationDelay: "150ms" }}
             >
-              <img src="/images/ProjectBPE/BookletContent1.png" />
+              <img src={bookletContent1} />
             </div>
             <div
               className={images1Visible ? "animate-fade-right" : "opacity-0"}
               style={{ animationDelay: "300ms" }}
             >
-              <img src="/images/ProjectBPE/BookletContent2.png" />
+              <img src={bookletContent2} />
             </div>
           </div>
 
@@ -126,7 +143,7 @@ export default function BpeTheProcess() {
             <div
               className={`w-1/3 ${images2Visible ? "animate-fade-left" : "opacity-0"}`}
             >
-              <img src="/images/ProjectBPE/WelcomeSign.png" />
+              <img src={welcomeSign} />
             </div>
             <div className="flex flex-col w-3/4 justify-between">
               <div className="flex w-full justify-between gap-10">
@@ -136,7 +153,7 @@ export default function BpeTheProcess() {
                     className={`w-1/2 ${images2Visible ? "animate-fade-up" : "opacity-0"}`}
                     style={{ animationDelay: `${i * 100}ms` }}
                   >
-                    <img src={`/images/ProjectBPE/${name}.png`} />
+                    <img src={cards[name]} />
                   </div>
                 ))}
               </div>
@@ -146,7 +163,7 @@ export default function BpeTheProcess() {
                   style={{ animationDelay: "200ms" }}
                 >
                   <img
-                    src="/images/ProjectBPE/IslandSign.png"
+                    src={islandSign}
                     className="w-630"
                   />
                 </div>
@@ -154,7 +171,7 @@ export default function BpeTheProcess() {
                   className={images2Visible ? "animate-fade-right" : "opacity-0"}
                   style={{ animationDelay: "300ms" }}
                 >
-                  <img src="/images/ProjectBPE/MentorGuide.png" />
+                  <img src={mentorGuide} />
                 </div>
               </div>
             </div>

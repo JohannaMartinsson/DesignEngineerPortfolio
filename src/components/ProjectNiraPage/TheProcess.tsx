@@ -1,6 +1,14 @@
 import { serifStyle, sansStyle } from "../../styles/fonts";
 import { brown } from "../../styles/colors";
 import { useInView } from "../../hooks/useInView";
+import processImage from "../../assets/images/ProjectNIRA/ProcessImage.png";
+import gdasOriginal from "../../assets/images/ProjectNIRA/GdasOriginal.png";
+import arrow1 from "../../assets/images/ProjectNIRA/Arrow1.png";
+import arrow2 from "../../assets/images/ProjectNIRA/Arrow2.png";
+import arrow3 from "../../assets/images/ProjectNIRA/Arrow3.png";
+import v2alt1 from "../../assets/images/ProjectNIRA/v2alt1.png";
+import v2alt2 from "../../assets/images/ProjectNIRA/v2alt2.png";
+import finalAllFrames from "../../assets/images/ProjectNIRA/FinalAllFrames.png";
 
 export default function NiraTheProcess() {
   const [headingRef, headingVisible] = useInView();
@@ -29,7 +37,7 @@ export default function NiraTheProcess() {
 
           <img
             ref={processImageRef}
-            src="/images/ProjectNIRA/ProcessImage.png"
+            src={processImage}
             className={`w-full ${processImageVisible ? "animate-fade-up" : "opacity-0"}`}
           />
 
@@ -95,9 +103,9 @@ export default function NiraTheProcess() {
             Going from an original interface cramped with unnecessary
             components...
           </p>
-          <img src="/images/ProjectNIRA/GdasOriginal.png" className="w-1/5" />
+          <img src={gdasOriginal} className="w-1/5" />
           <img
-            src="/images/ProjectNIRA/Arrow2.png"
+            src={arrow2}
             className="w-1/6 pl-10 pt-20"
           />
           <p className="text-md w-1/4 text-center -ml-8" style={sansStyle}>
@@ -105,9 +113,9 @@ export default function NiraTheProcess() {
           </p>
         </div>
         <div className="flex flex-col items-center gap-5 self-end w-1/2">
-          <img src="/images/ProjectNIRA/v2alt1.png" />
+          <img src={v2alt1} />
           <div className="flex items-center gap-5">
-            <img src="/images/ProjectNIRA/Arrow1.png" className="w-1/6" />
+            <img src={arrow1} className="w-1/6" />
             <p className="text-md w-2/3 text-center pt-10" style={sansStyle}>
               and the second using modals to remove less frequently used parts
               from the main screen
@@ -115,11 +123,11 @@ export default function NiraTheProcess() {
           </div>
         </div>
         <div className="flex items-center -mt-40">
-          <img src="/images/ProjectNIRA/v2alt2.png" className="w-5/7" />
+          <img src={v2alt2} className="w-5/7" />
         </div>
         <div className="w-full flex flex-col items-end -mt-10">
           <div className="flex w-1/3 justify-end">
-            <img src="/images/ProjectNIRA/Arrow3.png" className="w-1/5" />
+            <img src={arrow3} className="w-1/5" />
             <p className="text-md w-2/3 text-center -ml-5" style={sansStyle}>
               resulting in a final design used as a basis for implementation of
               the prototype
@@ -128,7 +136,7 @@ export default function NiraTheProcess() {
         </div>
         <div className="flex flex-col items-end -mt-10">
           <img
-            src="/images/ProjectNIRA/FinalAllFrames.png"
+            src={finalAllFrames}
             className="w-full"
           />
         </div>

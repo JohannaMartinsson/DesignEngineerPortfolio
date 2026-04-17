@@ -1,6 +1,7 @@
 import Nav from "../components/Nav";
 import { serifStyle, sansStyle } from "../styles/fonts";
 import { brown } from "../styles/colors";
+import johannaImg from "../assets/images/Jagmedmåstavla.jpg";
 
 export default function ContactPage() {
   return (
@@ -77,7 +78,7 @@ export default function ContactPage() {
                 style={{ borderRadius: "50% / 50%" }}
               >
                 <img
-                  src="/images/Jagmedm%C3%A5stavla.jpg"
+                  src={johannaImg}
                   alt="Johanna Martinsson"
                   className="w-full h-full object-cover -rotate-18 scale-108"
                 />

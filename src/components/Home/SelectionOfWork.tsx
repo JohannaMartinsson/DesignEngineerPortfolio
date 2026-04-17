@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { serifStyle, sansStyle } from "../../styles/fonts";
+import bpeImg from "../../assets/images/SelectionOfWork/ProjectBPE.png";
+import niraImg from "../../assets/images/SelectionOfWork/ProjectNIRA.png";
+import hubexoImg from "../../assets/images/SelectionOfWork/ProjectHubexo.png";
 
 const projects = [
   {
@@ -8,20 +11,20 @@ const projects = [
     description:
       "Visualizing the business plan for Netlight Stockholm’s 800+ employees",
     slug: "bpe",
-    image: "/images/SelectionOfWork/ProjectBPE.png",
+    image: bpeImg,
   },
   {
     title: "NIRA Dynamics",
     description:
       "Ensuring driver safety when interacting with in-car touch screens",
     slug: "nira",
-    image: "/images/SelectionOfWork/ProjectNIRA.png",
+    image: niraImg,
   },
   {
     title: "Hubexo",
     description: "Digitalizing the construction industry",
     slug: "hubexo",
-    image: "/images/SelectionOfWork/ProjectHubexo.png",
+    image: hubexoImg,
   },
 ];
 

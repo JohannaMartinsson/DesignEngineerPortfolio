@@ -2,6 +2,8 @@ import type { CSSProperties } from "react";
 import { useState, useEffect } from "react";
 import { serifStyle, sansStyle } from "../../styles/fonts";
 import { brown } from "../../styles/colors";
+import johannaImg from "../../assets/images/Jagmedmåstavla.jpg";
+import albertImg from "../../assets/images/Albert3.png";
 
 const fadeUp = (delay: number): CSSProperties => ({
   animationDelay: `${delay}ms`,
@@ -9,11 +11,11 @@ const fadeUp = (delay: number): CSSProperties => ({
 
 const slides = [
   {
-    image: "/images/Jagmedm%C3%A5stavla.jpg",
+    image: johannaImg,
     text: "…or in a pottery studio, working on yet another coffee mug.",
   },
   {
-    image: "/images/Albert3.png",
+    image: albertImg,
     text: "…or out on a walk with Albert.",
   },
 ];

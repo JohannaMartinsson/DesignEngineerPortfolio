@@ -22,17 +22,28 @@ const slides = [
 
 export default function Hero() {
   const [slideIndex, setSlideIndex] = useState(0);
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setVisible(false);
-      setTimeout(() => {
+    let active = true;
+
+    async function run() {
+      // Fade in first slide
+      setVisible(true);
+
+      while (active) {
+        await new Promise<void>((res) => setTimeout(res, 3000));
+        if (!active) return;
+        setVisible(false);
+        await new Promise<void>((res) => setTimeout(res, 800));
+        if (!active) return;
         setSlideIndex((i) => (i + 1) % slides.length);
         setVisible(true);
-      }, 1500);
-    }, 4000);
-    return () => clearInterval(interval);
+      }
+    }
+
+    run();
+    return () => { active = false; };
   }, []);
 
   const slide = slides[slideIndex];
@@ -83,7 +94,7 @@ export default function Hero() {
             className="w-full aspect-7/8 overflow-hidden rounded-t-full"
             style={{
               opacity: visible ? 1 : 0,
-              transition: "opacity 1.5s ease-in-out",
+              transition: "opacity 0.8s ease-in-out",
             }}
           >
             <img src={slide.image} className="w-full h-full object-cover" />
@@ -96,7 +107,7 @@ export default function Hero() {
           style={{
             ...sansStyle,
             opacity: visible ? 1 : 0,
-            transition: "opacity 1.5s ease-in-out",
+            transition: "opacity 0.8s ease-in-out",
           }}
         >
           {slide.text}

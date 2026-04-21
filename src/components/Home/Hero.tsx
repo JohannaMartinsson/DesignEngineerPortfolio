@@ -2,8 +2,8 @@ import type { CSSProperties } from "react";
 import { useState, useEffect } from "react";
 import { serifStyle, sansStyle } from "../../styles/fonts";
 import { brown } from "../../styles/colors";
-import johannaImg from "../../assets/images/Jagmedmåstavla.jpg";
-import albertImg from "../../assets/images/Albert3.png";
+import potteryStudio from "../../assets/images/PotteryStudio.png";
+import jagOchAbbeImg from "../../assets/images/JagOchAbbe.jpg";
 
 const fadeUp = (delay: number): CSSProperties => ({
   animationDelay: `${delay}ms`,
@@ -11,11 +11,11 @@ const fadeUp = (delay: number): CSSProperties => ({
 
 const slides = [
   {
-    image: johannaImg,
+    image: potteryStudio,
     text: "…or in a pottery studio, working on yet another coffee mug.",
   },
   {
-    image: albertImg,
+    image: jagOchAbbeImg,
     text: "…or out on a walk with Albert.",
   },
 ];
@@ -43,7 +43,9 @@ export default function Hero() {
     }
 
     run();
-    return () => { active = false; };
+    return () => {
+      active = false;
+    };
   }, []);
 
   const slide = slides[slideIndex];

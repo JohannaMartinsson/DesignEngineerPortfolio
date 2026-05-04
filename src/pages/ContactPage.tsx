@@ -85,10 +85,10 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-          <p className="text-md pt-20 w-4/5 text-white" style={sansStyle}>
+          {/*<p className="text-md pt-20 w-4/5 text-white" style={sansStyle}>
             PS. This portfolio was developed by Johanna herself, with a little
             help from Claude and Figma MCP of course
-          </p>
+          </p>*/}
         </div>
       </main>
     </>
